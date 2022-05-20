@@ -11,11 +11,15 @@ let btnCargaArregloB = <HTMLButtonElement>(
 let arregloA: number[] = new Array(5);
 let arregloB: number[] = new Array(5);
 let concatenacionDeArreglos = "";
+let testearNumero = new RegExp("^[0-9]*$");
 
 //declaracion de funciones
 function generarArreglo(arreglo: Array<number>) {
   for (let i = 0; i < arreglo.length; i++) {
     arreglo[i] = Number(prompt("ingrese un valor al arreglo"));
+    while(!testearNumero.test(arreglo[i])){
+      arreglo[i] = Number(prompt("el valor ingresado debe ser un numero"))
+    }
   }
 }
 
